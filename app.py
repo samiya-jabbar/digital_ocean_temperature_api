@@ -24,10 +24,10 @@ def results():
         # call API and convert response into Python dictionary
         url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={API_KEY}'
         temp_object = requests.get(url).json()
-        temp=float(temp_object["main"]["temp"]-273.15)
+        temp=float(temp_object["main"]["temp"])-273.15
         print(temp)
         
-        fehren = 5/9 * (temp + 32) 
+        fehren = (temp * 9/5) + 32
         print(fehren)
         
         celsius_fulfilmenttext=f"Temperature of {city} is {temp} °C & {fehren} °F"
@@ -52,6 +52,7 @@ def results():
 def webhook():
     # return response
     return make_response(jsonify(results()))
+
 
 # run the app
 if __name__ == '__main__':
