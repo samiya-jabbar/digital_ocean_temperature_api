@@ -24,14 +24,14 @@ def results():
         # call API and convert response into Python dictionary
         url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={API_KEY}'
         temp_object = requests.get(url).json()
-        temp=float(temp_object["main"]["temp"])
-        print(temp)
+        tempp=float(temp_object["main"]["temp"])
+        print(tempp)
         
-        fehren = (( temp - 273.15) * 9/5) + 32
+        fehren = (( tempp - 273.15) * 9/5) + 32
         #(temp * 9/5) + 32
         print(fehren)
         
-        celsius_fulfilmenttext=f"Temperature of {city} is {temp} °C & {fehren} °F"
+        celsius_fulfilmenttext=f"Temperature of {city} is {tempp} °C & {fehren} °F {temp} from open"
 
     # return a fulfillment response
         return {
