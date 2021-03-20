@@ -24,7 +24,7 @@ def results():
         # call API and convert response into Python dictionary
         url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={API_KEY}'
         temp_object = requests.get(url).json()
-        temp=float(temp_object["main"]["temp"])-273.15
+        temp=float(temp_object["main"]["temp"])
         print(temp)
         
         fehren = (temp * 9/5) + 32
