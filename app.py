@@ -8,7 +8,7 @@ app = Flask(__name__)
 # default route
 @app.route('/')
 def index():
-    return 'Hello World!'
+    return 'WELCOME TO WEATHER TEMPERATURE APP'
 
 # function for responses
 def results():
