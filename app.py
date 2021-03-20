@@ -27,7 +27,8 @@ def results():
         temp=float(temp_object["main"]["temp"])
         print(temp)
         
-        fehren = (temp * 9/5) + 32
+        fehren = (( temp - 273.15) * 9/5) + 32
+        #(temp * 9/5) + 32
         print(fehren)
         
         celsius_fulfilmenttext=f"Temperature of {city} is {temp} °C & {fehren} °F"
