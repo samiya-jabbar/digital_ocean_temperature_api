@@ -25,7 +25,9 @@ def results():
         url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&APPID={API_KEY}'
         temp_object = requests.get(url).json()
         temp=float(temp_object["main"]["temp"])-273.15
+        temp = round(temp, 2)
         fehren = (temp * 9/5) + 32
+        fehren = round(fehren, 2)
         celsius_fulfilmenttext=f"Temperature of {city} is {temp} °C & {fehren} °F"
 
     # return a fulfillment response
